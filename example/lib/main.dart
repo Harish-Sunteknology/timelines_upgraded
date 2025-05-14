@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:timelines/timelines.dart';
+import 'package:timelines_upgraded/timelines_upgraded.dart';
 
 import 'component_page.dart';
 import 'showcase/package_delivery_tracking.dart';
@@ -74,13 +73,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
+    return PopScope(
+      canPop: false,
+      onPopInvokedWithResult: (didPop, _) {
+        if (didPop) return;
         if (_navigatorKey.currentState?.canPop() ?? false) {
           _navigatorKey.currentState?.maybePop();
-          return false;
-        } else {
-          return true;
         }
       },
       child: Column(

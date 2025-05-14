@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'connector_theme.dart';
 import 'line_painter.dart';
@@ -403,7 +402,7 @@ class _ConnectorIndent extends StatelessWidget {
     this.indent,
     this.endIndent,
     required this.child,
-  })   : assert(space == null || space >= 0),
+  })  : assert(space == null || space >= 0),
         assert(indent == null || indent >= 0),
         assert(endIndent == null || endIndent >= 0),
         super(key: key);

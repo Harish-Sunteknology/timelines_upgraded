@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timelines/timelines.dart';
+import 'package:timelines_upgraded/timelines_upgraded.dart';
 
 import 'widget.dart';
 

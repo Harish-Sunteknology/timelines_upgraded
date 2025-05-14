@@ -36,6 +36,13 @@ Check it out on the [web](https://chulwoo.dev/timelines/) or look at the [source
 * Combination with Flutter widgets(Row, Column, CustomScrollView, etc).
 * Customize each range with themes.
 
+## Acknowledgment
+
+This package is a modified fork of the original [timelines](https://pub.dev/packages/timelines) package by [chulwoo-park](https://github.com/chulwoo-park).  
+All credits for the original idea and implementation go to the original author.
+
+
+
 # Getting started
 
 - [Installation](#installation)
@@ -72,7 +79,7 @@ Alternatively, your editor might support flutter pub get. Check the docs for you
 #### 3. Import it
 Now in your Dart code, you can use:
 ``` dart
-import 'package:timelines/timelines.dart';
+import 'package:timelines_upgraded/timelines_upgraded.dart';
 ```
 
 ## Basic Usage
