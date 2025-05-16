@@ -6,7 +6,7 @@ repository: https://github.com/Harish-Sunteknology/timelines_upgraded
 issue_tracker: https://github.com/Harish-Sunteknology/timelines_upgraded/issues
 
 environment:
-  sdk: '>=2.14.0 <3.0.0'
+  sdk: '>=2.14.0 <4.0.0'
   flutter: '>=1.17.0'
 
 dependencies:
@@ -16,6 +16,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  pedantic: ^1.11.0
+  lints: ^5.1.1
 
 flutter: 
