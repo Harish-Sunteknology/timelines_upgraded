@@ -14,10 +14,10 @@ const todoColor = Color(0xffd1d2d7);
 
 class ProcessTimelinePage extends StatefulWidget {
   @override
-  _ProcessTimelinePageState createState() => _ProcessTimelinePageState();
+  ProcessTimelinePageState createState() => ProcessTimelinePageState();
 }
 
-class _ProcessTimelinePageState extends State<ProcessTimelinePage> {
+class ProcessTimelinePageState extends State<ProcessTimelinePage> {
   int _processIndex = 2;
 
   Color getColor(int index) {
@@ -70,8 +70,9 @@ class _ProcessTimelinePageState extends State<ProcessTimelinePage> {
             );
           },
           indicatorBuilder: (_, index) {
-            var color;
-            var child;
+            late Color color;
+            Widget? child;
+
             if (index == _processIndex) {
               color = inProgressColor;
               child = Padding(
@@ -202,11 +203,10 @@ class _BezierPainter extends CustomPainter {
 
     final radius = size.width / 2;
 
-    var angle;
-    var offset1;
-    var offset2;
-
-    var path;
+    double angle;
+    Offset offset1;
+    Offset offset2;
+    Path path;
 
     if (drawStart) {
       angle = 3 * pi / 4;

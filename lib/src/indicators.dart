@@ -149,8 +149,9 @@ class ContainerIndicator extends Indicator {
     Key? key,
     double? size,
     double? position,
-    this.child,
-  }) : super(
+    Widget? child,
+  })  : _child = child,
+        super(
           key: key,
           size: size,
           position: position,
@@ -160,7 +161,9 @@ class ContainerIndicator extends Indicator {
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
-  final Widget? child;
+  @override
+  Widget? get child => _child;
+  final Widget? _child;
 
   @override
   Widget build(BuildContext context) {
@@ -183,9 +186,11 @@ class DotIndicator extends Indicator {
     double? size,
     Color? color,
     double? position,
-    this.border,
-    this.child,
-  }) : super(
+    BoxBorder? border,
+    Widget? child,
+  })  : _border = border,
+        _child = child,
+        super(
           key: key,
           size: size,
           color: color,
@@ -193,12 +198,16 @@ class DotIndicator extends Indicator {
         );
 
   /// The border to use when drawing the dot's outline.
-  final BoxBorder? border;
+  @override
+  BoxBorder? get border => _border;
+  final BoxBorder? _border;
 
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
-  final Widget? child;
+  @override
+  Widget? get child => _child;
+  final Widget? _child;
 
   @override
   Widget build(BuildContext context) {
@@ -231,9 +240,8 @@ class OutlinedDotIndicator extends Indicator {
     double? position,
     this.backgroundColor,
     this.borderWidth = 2.0,
-    this.child,
-  })  : assert(size == null || size >= 0),
-        assert(position == null || 0 <= position && position <= 1),
+    Widget? child,
+  })  : _child = child,
         super(
           key: key,
           size: size,
@@ -252,7 +260,9 @@ class OutlinedDotIndicator extends Indicator {
   /// The widget below this widget in the tree.
   ///
   /// {@macro flutter.widgets.child}
-  final Widget? child;
+  @override
+  Widget? get child => _child;
+  final Widget? _child;
 
   @override
   Widget build(BuildContext context) {

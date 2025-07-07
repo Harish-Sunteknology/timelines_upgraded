@@ -137,7 +137,7 @@ class TimelineTile extends StatelessWidget {
         ),
     ];
 
-    var result;
+    Widget result;
     switch (direction) {
       case Axis.vertical:
         result = Row(

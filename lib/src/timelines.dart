@@ -124,7 +124,7 @@ class Timeline extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-    TimelineThemeData? theme,
+    this.theme,
   })  : childrenDelegate = SliverChildListDelegate(
           children,
           addAutomaticKeepAlives: addAutomaticKeepAlives,
@@ -133,7 +133,6 @@ class Timeline extends BoxScrollView {
         ),
         assert(scrollDirection == null || theme == null,
             'Cannot provide both a scrollDirection and a theme.'),
-        this.theme = theme,
         super(
           key: key,
           scrollDirection: scrollDirection ?? theme?.direction ?? Axis.vertical,
@@ -204,7 +203,7 @@ class Timeline extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-    TimelineThemeData? theme,
+    this.theme,
   })  : assert(itemCount >= 0),
         assert(semanticChildCount == null || semanticChildCount <= itemCount),
         assert(scrollDirection == null || theme == null,
@@ -216,7 +215,6 @@ class Timeline extends BoxScrollView {
           addRepaintBoundaries: addRepaintBoundaries,
           addSemanticIndexes: addSemanticIndexes,
         ),
-        this.theme = theme,
         super(
           key: key,
           scrollDirection: scrollDirection ?? theme?.direction ?? Axis.vertical,
@@ -260,10 +258,9 @@ class Timeline extends BoxScrollView {
         ScrollViewKeyboardDismissBehavior.manual,
     String? restorationId,
     Clip clipBehavior = Clip.hardEdge,
-    TimelineThemeData? theme,
+    this.theme,
   })  : assert(scrollDirection == null || theme == null,
             'Cannot provide both a scrollDirection and a theme.'),
-        this.theme = theme,
         super(
           key: key,
           scrollDirection: scrollDirection ?? theme?.direction ?? Axis.vertical,
@@ -317,7 +314,7 @@ class Timeline extends BoxScrollView {
       result = SliverList(delegate: childrenDelegate);
     }
 
-    var theme;
+    TimelineThemeData? theme;
     if (this.theme != null) {
       theme = this.theme;
     } else if (scrollDirection != TimelineTheme.of(context).direction) {
@@ -470,7 +467,7 @@ class FixedTimeline extends StatelessWidget {
       clipBehavior: clipBehavior,
     );
 
-    var theme;
+    TimelineThemeData? theme;
     if (this.direction != null) {
       if (direction != TimelineTheme.of(context).direction) {
         theme = TimelineTheme.of(context).copyWith(direction: this.direction);

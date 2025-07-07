@@ -5,10 +5,10 @@ import 'widget.dart';
 
 class ThemePage extends StatefulWidget {
   @override
-  _ThemePageState createState() => _ThemePageState();
+  ThemePageState createState() => ThemePageState();
 }
 
-class _ThemePageState extends State<ThemePage> {
+class ThemePageState extends State<ThemePage> {
   final _themeColors = {
     'RED': Colors.red,
     'GREEN': Colors.green,
@@ -335,7 +335,7 @@ class _ThemeSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var label;
+    String label;
     if (value == null) {
       label = '';
     } else if (value! > 1) {

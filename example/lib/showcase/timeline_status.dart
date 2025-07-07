@@ -123,7 +123,7 @@ class _Timeline2 extends StatelessWidget {
             );
           },
           connectorBuilder: (_, index, connectorType) {
-            var color;
+            Color? color;
             if (index + 1 < data.length - 1) {
               color = data[index].isInProgress && data[index + 1].isInProgress
                   ? Color(0xff193fcc)
@@ -179,7 +179,7 @@ class _Timeline3 extends StatelessWidget {
             );
           },
           connectorBuilder: (context, index, connectorType) {
-            var color;
+            Color? color;
             if (index + 1 < data.length - 1 &&
                 data[index].isInProgress &&
                 data[index + 1].isInProgress) {
@@ -190,7 +190,7 @@ class _Timeline3 extends StatelessWidget {
             );
           },
           contentsBuilder: (context, index) {
-            var height;
+            double height;
             if (index + 1 < data.length - 1 &&
                 data[index].isInProgress &&
                 data[index + 1].isInProgress) {
